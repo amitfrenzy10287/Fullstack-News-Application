@@ -12,6 +12,9 @@ export const Container = styled.div`
 	min-height:300px;
 	@media(max-width:1000px){
 		padding:10px;
+		width: 96%;
+    	margin-left:0;
+	    margin-top: 5%;
 	}
 	& label {
 		width: 90px;
@@ -24,7 +27,7 @@ export const Container = styled.div`
 	}
 	& input{
 		display: inline-block;
-		width: 400px;
+		width: 380px;
 		border:solid 1px #ccc;
 		outline:0;
 		line-height: 32px;
@@ -39,7 +42,7 @@ export const Container = styled.div`
 			border:solid 1px #919191;
 		}
 		@media(max-width:1000px){
-			width: 80%;
+			width: 95%;
 		}
 	}
 `;
