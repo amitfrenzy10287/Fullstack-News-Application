@@ -69,6 +69,10 @@ class Home extends Component{
 			current: news.newsId
 		});
 	}
+
+	handleCancelEditNews = ()=>{
+		this.setState({current : ''});
+	}
 	handleSaveNews = (newsId)=>{
 		const controls = this.state.controls;
 		const token = this.props.auth.token ? this.props.auth.token :'';
@@ -175,6 +179,7 @@ class Home extends Component{
 						</div>
 						<div style={this.state.current === id ? CommonStyles.show : CommonStyles.hide}>	
 							<Button onClick={(e)=>this.handleSaveNews(news[key].newsId)}>Save</Button>
+							<Button onClick={(e)=>this.handleCancelEditNews()}>Cancel</Button>
 						</div>
 						<Button 
 						onClick={()=>this.handleDeleteNews(news[key].newsId)}>
