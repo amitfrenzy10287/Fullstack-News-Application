@@ -9,7 +9,10 @@ export const Container = styled.div`
 	border-radius: 4px;
 	border: solid 1px #ccc;
 	background-color: #fff;
-	height:300px;
+	min-height:300px;
+	@media(max-width:1000px){
+		padding:10px;
+	}
 	& label {
 		width: 90px;
 		display: inline-block;
@@ -21,7 +24,7 @@ export const Container = styled.div`
 	}
 	& input{
 		display: inline-block;
-		min-width: 400px;
+		width: 400px;
 		border:solid 1px #ccc;
 		outline:0;
 		line-height: 32px;
@@ -35,7 +38,14 @@ export const Container = styled.div`
 			outline:0;
 			border:solid 1px #919191;
 		}
+		@media(max-width:1000px){
+			width: 80%;
+		}
 	}
+`;
+
+export const ButtonWrapper= styled.div`
+	text-align:center;
 `;
 
 export const Button = styled.button`
@@ -49,7 +59,10 @@ export const Button = styled.button`
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 21%;
+    @media(max-width:1000px){
+		margin:0;
+		width:100%;
+	}
     &:hover{
     	background-color: #000cae;
     	border:0;

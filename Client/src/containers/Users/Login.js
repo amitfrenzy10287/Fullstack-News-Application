@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
 import * as actions from '../../store/actions';
-import { Link,Router,Redirect } from 'react-router-dom';
-import { formatDate, fileUpload } from '../../utils';
+import { Redirect } from 'react-router-dom';
 
 import {
 	Container,
@@ -10,6 +9,7 @@ import {
 	Heading,
 	LoginWrapper,
 	MessageBox,
+	ButtonWrapper
 }
 from './style';
 
@@ -34,7 +34,7 @@ class Login extends Component{
 	}
 	
 	render(){
-		const { auth, loading, errorLogin } = this.props;
+		const { auth, errorLogin } = this.props;
 		let redirectUrl =''; 
 		if(auth && auth.token!==null){
 			redirectUrl=<Redirect to='/news' />	
@@ -59,9 +59,9 @@ class Login extends Component{
 					  onChange={(e)=>this.handleChange(e, 'password')} 
 					  value={this.state.controls.password} />
 				</div>
-				<div>
+				<ButtonWrapper>
 					<Button onClick={()=>this.loginUser()}> Login </Button>
-				</div>
+				</ButtonWrapper>
 				</LoginWrapper>
 			</Container>
 		);
